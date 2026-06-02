@@ -4,60 +4,56 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ASZAF"
-         Title="MainWindow"
+         Title="Doohickey Corporations"
  Width="1100"
- Height="950"
+ Height="500"
  WindowStartupLocation="CenterScreen"
  WindowState="Maximized"
  mc:Ignorable="d">
     <Window.Resources>
-        <ResourceDictionary Source="Resources/ListItem.xaml" />
+        <ResourceDictionary Source="Resources/Dictionary1.xaml" />
     </Window.Resources>
-    <DockPanel Background="CornflowerBlue">
-        <StackPanel Height="30" DockPanel.Dock="Top">
+    <DockPanel Background="LightPink">
+        <StackPanel Height="55" DockPanel.Dock="Top">
             <TextBlock
             FontWeight="ExtraBold"
-            Foreground="White"
-            Text="eKréta Adminisztrátori felület"
+                FontSize="40"
+            Foreground="MediumPurple"
+            Text="Doohickey Corporations"
             TextAlignment="Center" />
         </StackPanel>
         <StackPanel
+         
         Width="200"
-        Background="DeepSkyBlue"
+        Background="MediumPurple"
         DockPanel.Dock="Left">
-            <ListView>
+            <ListView Margin="8" >
                 <ListViewItem
-                x:Name="diakMenu"
-                Content="Diák ok"
-                MouseLeftButtonUp="diakMenu_MouseLeftButtonUp"
+                x:Name="UserMenu"
+                Content="Users"
+                MouseLeftButtonUp="UserMenu_MouseLeftButtonUp"
                 Style="{StaticResource ResourceKey=ListItemStyle}" />
                 <ListViewItem
-                x:Name="tanarMenu"
-                Content="Tanárok"
-                MouseLeftButtonUp="tanarMenu_MouseLeftButtonUp"
-                Style="{StaticResource ResourceKey=ListItemStyle}" />
+                x:Name="CustomerMenu"
+                Content="Customers"
+                MouseLeftButtonUp="CustomerMenu_MouseLeftButtonUp"
+                    Style="{StaticResource ResourceKey=ListItemStyle}"
+                />
                 <ListViewItem
-                x:Name="osztalyMenu"
-                Content="Osztályok"
-                MouseLeftButtonUp="osztalyMenu_MouseLeftButtonUp"
-                Style="{StaticResource ResourceKey=ListItemStyle}" />
-                <ListViewItem
-                x:Name="termekMenu"
-                Content="Termek"
-                MouseLeftButtonUp="termekMenu_MouseLeftButtonUp"
-                Style="{StaticResource ResourceKey=ListItemStyle}" />
-                <ListViewItem
-                x:Name="felhasznalokMenu"
-                Content="Felhasználók"
-                MouseLeftButtonUp="felhasznalokMenu_MouseLeftButtonUp"
-                Style="{StaticResource ResourceKey=ListItemStyle}" />
+                x:Name="ProductMenu"
+                Content="Products"
+                MouseLeftButtonUp="ProductMenu_MouseLeftButtonUp"
+                    Style="{StaticResource ResourceKey=ListItemStyle}"
+                />
+               
                 <ListViewItem
                 x:Name="kilepesMenu"
                 Background="Red"
                 Content="Bezárás"
                 Foreground="White"
                 MouseLeftButtonUp="kilepesMenu_MouseLeftButtonUp"
-                Style="{StaticResource ResourceKey=ListItemStyle}" />
+                    Style="{StaticResource ResourceKey=ListItemStyle}"
+                />
             </ListView>
         </StackPanel>
         <StackPanel x:Name="feladatPanel" DockPanel.Dock="Right" />

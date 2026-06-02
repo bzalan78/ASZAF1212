@@ -20,5 +20,20 @@ namespace ASZAF
         {
             InitializeComponent();
         }
+
+        private void UserMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void CustomerMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void ProductMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
