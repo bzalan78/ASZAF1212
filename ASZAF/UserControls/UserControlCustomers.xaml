@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="ASZAF.UserControls.UserControlCustomers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel>
+
+        <DataGrid x:Name="datagridCustomers"
+                  Width="1100"
+                  Height="600"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  IsReadOnly="True">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="ID"/>
+                <DataGridTextColumn Binding="{Binding UserId}" Header="User ID"/>
+                <DataGridTextColumn Binding="{Binding PhoneNumber}" Header="Phone"/>
+                <DataGridTextColumn Binding="{Binding Address}" Header="Address"/>
+                <DataGridTextColumn Binding="{Binding City}" Header="City"/>
+                <DataGridTextColumn Binding="{Binding Country}" Header="Country"/>
+                <DataGridTextColumn Binding="{Binding BirthDate}" Header="Birth Date"/>
+                <DataGridTextColumn Binding="{Binding LoyaltyPoints}" Header="Points"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <WrapPanel Margin="130,10,130,0">
+
+            <StackPanel Width="300" Background="LightGray">
+
+                <TextBlock>User ID:</TextBlock>
+                <TextBox x:Name="userIdText"/>
+
+                <TextBlock>Phone:</TextBlock>
+                <TextBox x:Name="phoneText"/>
+
+                <TextBlock>Address:</TextBlock>
+                <TextBox x:Name="addressText"/>
+
+                <TextBlock>City:</TextBlock>
+                <TextBox x:Name="cityText"/>
+
+                <TextBlock>Country:</TextBlock>
+                <TextBox x:Name="countryText"/>
+
+                <TextBlock>Loyalty Points:</TextBlock>
+                <TextBox x:Name="pointsText"/>
+
+            </StackPanel>
+
+            <StackPanel>
+                <Button Width="200"
+                        Content="Save"
+                        Background="Green"
+                        Foreground="White"/>
+
+                <Button Width="200"
+                        Content="Delete"
+                        Background="Red"
+                        Foreground="White"
+                        Visibility="Hidden"/>
+
+                <Button Width="200"
+                        Content="Modify"
+                        Background="Yellow"
+                        Visibility="Hidden"/>
+            </StackPanel>
+
+        </WrapPanel>
+
+    </StackPanel>
+</UserControl>
