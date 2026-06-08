@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eKreta.Models;
+using System;
 
 namespace ASZAF.Models
 {
@@ -31,5 +32,8 @@ namespace ASZAF.Models
         public DateTime CreatedAt { get; set; }
         public bool IsActive { get; set; }
         public string Role { get; set; }
+
+        public string SzerepkorNev => Enum.GetName(typeof(Szerepkor), Role) ?? "Ismeretlen";
     }
 }
+    

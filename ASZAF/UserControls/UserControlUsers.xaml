@@ -32,6 +32,10 @@
             <StackPanel Width="300" Background="LightGray">
                 <TextBlock>Username:</TextBlock>
                 <TextBox x:Name="usernameText"/>
+                <TextBlock>
+    Full name:
+                </TextBlock>
+                <TextBox x:Name="fullname" />
 
                 <TextBlock>Email:</TextBlock>
                 <TextBox x:Name="emailText"/>
@@ -46,7 +50,7 @@
                 <TextBox x:Name="lastNameText"/>
 
                 <TextBlock>Role:</TextBlock>
-                <TextBox x:Name="roleText"/>
+                <ComboBox x:Name="roleText"/>
             </StackPanel>
 
             <StackPanel>
