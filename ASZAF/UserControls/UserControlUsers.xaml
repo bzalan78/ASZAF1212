@@ -11,17 +11,18 @@
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
                   IsReadOnly="True"
-                  SelectionChanged="datagridUsers_SelectionChanged">
+                  SelectionChanged="datagridFelhasznalok_SelectionChanged">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="ID"/>
                 <DataGridTextColumn Binding="{Binding Username}" Header="Username"/>
-                <DataGridTextColumn Binding="{Binding Email}" Header="Email"/>
+                <DataGridTextColumn Binding="{Binding Fullname}" Header="Fullname"/>
+                
                 <DataGridTextColumn Binding="{Binding PasswordHash}" Header="Password"/>
                 <DataGridTextColumn Binding="{Binding FirstName}" Header="First Name"/>
                 <DataGridTextColumn Binding="{Binding LastName}" Header="Last Name"/>
-                <DataGridTextColumn Binding="{Binding CreatedAt}" Header="Created"/>
-                <DataGridCheckBoxColumn Binding="{Binding IsActive}" Header="Active"/>
+                
+                
                 <DataGridTextColumn Binding="{Binding Role}" Header="Role"/>
             </DataGrid.Columns>
 
@@ -33,7 +34,7 @@
                 <TextBlock>Username:</TextBlock>
                 <TextBox x:Name="usernameText"/>
                 <TextBlock>
-    Full name:
+                 Full name:
                 </TextBlock>
                 <TextBox x:Name="fullname" />
 
@@ -57,6 +58,8 @@
                 <Button x:Name="mentesBtn"
                         Width="200"
                         Content="Save"
+                        Click="mentesBtn_Click"
+                        
                         Background="Green"
                         Foreground="White"/>
 

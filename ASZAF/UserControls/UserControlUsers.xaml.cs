@@ -40,6 +40,7 @@ namespace ASZAF.UserControls
             datagridUsers.ItemsSource = users;
 
             ResetButtons();
+            
         }
 
         private void AdatbazisLekerdezes()
@@ -112,7 +113,7 @@ namespace ASZAF.UserControls
 
             //Felhasználó objektum összeállítása
             User ujFelhasznalo = new User(usernameText.Text,
-                fullname.Text, PasswordHelper.HashPassword(passwordText.Password), kivalasztottSzerepkorId);
+                fullname.Text, PasswordHelper.HashPassword(passwordText.Password),Convert.ToString( kivalasztottSzerepkorId));
 
             //Adat insert...
             var felhasznaloRepo = new GenericRepository<User>(App.databasePath);
@@ -130,24 +131,25 @@ namespace ASZAF.UserControls
             AdatbazisLekerdezes();
         }
 
-        private void ModBtn_Click(object sender, RoutedEventArgs e, Szerepkor kivalasztottSzerepkor, Szerepkor kivalasztottSzerepkor)
+        private void ModBtn_Click(object sender, RoutedEventArgs e, Szerepkor kivalasztottSzerepkor, Szerepkor kivalasztottSzerepkorId)
         {
             selectedUser.Username = usernameText.Text;
             
             string kivalasztottSzerepkorNev = (string)roleText.SelectedItem;
-            Szerepkor kivalasztottSzerepkor = (Szerepkor)Enum.Parse(typeof(Szerepkor), kivalasztottSzerepkorNev);
-            selectedUser.Role = (int)kivalasztottSzerepkor;
+           //Szerepkor kivalasztottSzerepkor = (Szerepkor)Enum.Parse(typeof(Szerepkor), kivalasztottSzerepkorNev);
+            //selectedUser.Role = (string)kivalasztottSzerepkor;
 
-            if (jelszoText.Password != "")
+            if (passwordText.Password != "")
             {
-                kivalasztottFelhasznalo.Jelszo = PasswordHelper.HashPassword(jelszoText.Password); // TODO: jelszó kódolás
+                selectedUser.PasswordHash= PasswordHelper.HashPassword(passwordText.Password); // TODO: jelszó kódolás
             }
 
-            var felhasznaloRepo = new GenericRepository<Felhasznalo>(App.databasePath);
-            felhasznaloRepo.Update(kivalasztottFelhasznalo);
+            var felhasznaloRepo = new GenericRepository<User>(App.databasePath);
+            felhasznaloRepo.Update(selectedUser);
 
             AdatbazisLekerdezes();
         }
 
+        
     }
 }

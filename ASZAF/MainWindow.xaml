@@ -51,7 +51,7 @@
                 Background="Red"
                 Content="Bezárás"
                 Foreground="White"
-                MouseLeftButtonUp="kilepesMenu_MouseLeftButtonUp"
+               MouseLeftButtonUp="kilepesMenu_MouseLeftButtonUp"
                     Style="{StaticResource ResourceKey=ListItemStyle}"
                 />
             </ListView>

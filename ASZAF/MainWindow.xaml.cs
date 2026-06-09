@@ -23,17 +23,25 @@ namespace ASZAF
 
         private void UserMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            feladatPanel.Children.Clear();
+            feladatPanel.Children.Add(new UserControls.UserControlUsers());
         }
 
         private void CustomerMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            feladatPanel.Children.Clear();
+            feladatPanel.Children.Add(new UserControls.UserControlCustomers());
         }
 
         private void ProductMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
+            feladatPanel.Children.Clear();
+            feladatPanel.Children.Add(new UserControls.UserControlProducts());
+        }
 
+        private void kilepesMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            App.Current.Shutdown();
         }
     }
 }
